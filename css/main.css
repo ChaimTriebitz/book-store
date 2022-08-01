@@ -1,0 +1,135 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Gotham Light', sans-serif;
+}
+button {
+	border: none;
+	cursor: pointer;
+}
+button:hover {
+	transition: 1 ease;
+	transform: scale(1.05);
+	color: black;
+}
+body {
+	overflow: hidden;
+	height: 100vh;
+	background-image: url('/img/book-shop.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+h1 {
+	display: inline;
+	margin-left: 1%;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #483c32;
+	font-size: 4rem;
+	text-shadow: -1px 5px 5px rgba(86, 78, 63, 0.89);
+	text-decoration: none;
+}
+.close-bodal-btn,
+.create-book-btn {
+	float: right;
+	width: 200px;
+	height: 50px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #483c32;
+	border-radius: 5px;
+	background-color: #c19a6b;
+}
+
+.books {
+	text-align: center;
+	min-width: 900px;
+	height: 90%;
+	background-color: rgba(111, 78, 55, 0.857);
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 5px;
+}
+.books-table {
+	position: absolute;
+	padding: 25px;
+	left: 50%;
+	transform: translate(-50%);
+	background-color: #c19a6b;
+	width: 90%;
+	border-radius: 5px;
+}
+tr {
+	height: 45px;
+}
+th {
+	font-size: 1.5em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+td {
+	border: #6f4e37 solid 2px;
+}
+.modal-book-price,
+.cell-price {
+	color: #808000;
+}
+.modal-book-name,
+.cell-name {
+	color: #483c32;
+}
+.modal-book-id,
+.cell-id {
+	color: #a52a2a;
+}
+th,
+h2,
+h3,
+h4 {
+	color: #4a0404;
+	text-decoration: underline;
+}
+.next-page-btn,
+.prev-page-btn,
+.search-btn,
+.action-btn {
+	color: #f5deb3;
+	background-color: #808000;
+	font-size: 1.1em;
+	width: 100px;
+	height: 33.3px;
+	border-radius: 5px;
+	margin: 0px 10px;
+}
+.read-btn {
+	background-color: #483c32;
+}
+.update-btn {
+	background-color: #a95c68;
+}
+.delete-btn {
+	background-color: #ff5733;
+}
+
+.prev-page-btn:disabled,
+.next-page-btn:disabled {
+	background-color: #f5deb3;
+}
+
+.paging {
+	position: absolute;
+	bottom: 6%;
+	left: 50%;
+	transform: translate(-50%);
+	display: flex;
+}
+
+.page-idx {
+	background-color: #f5deb3;
+	color: #808000;
+	height: 33.3px;
+	width: 33.3px;
+	padding-top: 5px;
+	font-size: large;
+	font-weight: bold;
+}

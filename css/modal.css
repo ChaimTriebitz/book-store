@@ -1,0 +1,70 @@
+.modal {
+	position: absolute;
+	right: 0;
+	text-align: center;
+	min-width: 350px;
+	top: 15%;
+	height: 90%;
+	background-color: #f5deb3;
+	border-radius: 5px;
+	opacity: 0.9;
+	transition: 0.8s;
+}
+
+.modal-img img {
+	margin-bottom: 25px;
+	width: 200px;
+	height: 200px;
+}
+.close-bodal-btn {
+	position: fixed;
+	bottom: 0;
+}
+.hide {
+	right: -150%;
+}
+
+.rating {
+	background-color: #c19a6b;
+	width: 250px;
+	height: 175px;
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.emojis {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: flex;
+	overflow: hidden;
+}
+
+.far {
+	font-size: 50px;
+	transform: translateX(-50%);
+	transition: 0.3s;
+}
+
+.stars {
+	position: absolute;
+	width: 200px;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 10%;
+}
+
+.fa-star {
+	color: lightgray;
+	cursor: pointer;
+}
+
+.fa-star.active,
+.cell-rate {
+	color: gold;
+}

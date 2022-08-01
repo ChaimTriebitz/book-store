@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Book Shop</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+			integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="css/modal.css" />
+		<link rel="stylesheet" href="css/filters.css" />
+	</head>
+	<body onload="onInit()">
+		<h1 class="header">CT BOOK SHOP</h1>
+
+		<button class="create-book-btn" onclick="onAddBook()">
+			Create A New Book
+		</button>
+
+		<section class="books">
+			<h1>Book List</h1>
+			<table class="books-table">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Title</th>
+						<th>Price</th>
+						<th>Actions</th>
+						<th><i class="fas fa-star fa-2x" style="color: gold"></i></th>
+					</tr>
+				</thead>
+				<tbody class="books-list"></tbody>
+				<h2 class="not-found"></h2>
+			</table>
+			<div class="paging">
+				<button class="prev-page-btn" onclick="onPrevPage(this)">≪Prev</button>
+				<span class="page-idx">1</span>
+				<button class="next-page-btn" onclick="onNextPage(this)">Next≫</button>
+			</div>
+		</section>
+
+		<section class="modal hide">
+			<h2 class="modal-book-name"></h2>
+			<h3>Price : <span class="modal-book-price"></span></h3>
+			<h4>Id : <span class="modal-book-id"></span></h4>
+			<div class="modal-img"></div>
+			<button class="close-bodal-btn" onclick="onCloseModal()">Close »</button>
+			<div class="rating">
+				<h3>RATING</h3>
+				<div class="emojis">
+					<i class="far fa-angry fa-3x"></i>
+					<i class="far fa-frown fa-3x"></i>
+					<i class="far fa-meh fa-3x"></i>
+					<i class="far fa-smile fa-3x"></i>
+					<i class="far fa-laugh fa-3x"></i>
+				</div>
+				<div class="stars">
+					<i class="fas fa-star fa-2x" onclick="onUpdateRating(1)"></i>
+					<i class="fas fa-star fa-2x" onclick="onUpdateRating(2)"></i>
+					<i class="fas fa-star fa-2x" onclick="onUpdateRating(3)"></i>
+					<i class="fas fa-star fa-2x" onclick="onUpdateRating(4)"></i>
+					<i class="fas fa-star fa-2x" onclick="onUpdateRating(5)"></i>
+				</div>
+			</div>
+		</section>
+
+		<section class="filter">
+			<h2>Filter</h2>
+			<form onsubmit="onSeachBook(event)">
+				<input
+					type="text"
+					name="search-book"
+					placeholder="Search A Book"
+					value=""
+				/>
+				<button class="search-btn">Search</button>
+			</form>
+			<label>
+				<h3>Max Price: <span class="filter-price">50</span> $</h3>
+				<input
+					type="range"
+					min="0"
+					max="50"
+					value="50"
+					class="filter-price-range"
+					onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})"
+				/>
+			</label>
+			<label>
+				<h3>
+					Min Rate: <span class="filter-rate">1</span
+					><i class="fas fa-star fa-2x" style="color: gold"></i>
+				</h3>
+				<input
+					type="range"
+					min="1"
+					max="5"
+					value="1"
+					class="filter-rate-range"
+					onchange="this.title=this.value;onSetFilterBy({minRate: this.value})"
+				/>
+			</label>
+		</section>
+
+		<script src="js/services/util.service.js"></script>
+		<script src="js/services/storage.service.js"></script>
+		<script src="js/services/book.service.js"></script>
+		<script src="js/controller/book.controller.js"></script>
+	</body>
+</html>
